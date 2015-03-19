@@ -481,11 +481,6 @@ public class DefaultCodegen {
     property.defaultValue = toDefaultValue(p);
     property.jsonSchema = Json.pretty(p);
 
-    if (property.name != name) {
-        property.isNameEscaped = true;
-        property.originalName = name;
-    }
-
     String type = getSwaggerType(p);
     if(p instanceof AbstractNumericProperty) {
       AbstractNumericProperty np = (AbstractNumericProperty) p;

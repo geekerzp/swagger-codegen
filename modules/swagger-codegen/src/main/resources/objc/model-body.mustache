@@ -3,12 +3,12 @@
 #import "{{classname}}.h"
 
 @implementation {{classname}}
-{{#vars}}{{#isNameEscaped}}
+{{#vars}}
 + (JSONKeyMapper *)keyMapper
 {
-    return [[JSONKeyMapper alloc] initWithDictionary:@{@"{{originalName}}": @"{{name}}"}];
+    return [[JSONKeyMapper alloc] initWithDictionary:@{@"{{baseName}}": @"{{name}}"}];
 }
-{{/isNameEscaped}}{{/vars}}
+{{/vars}}
 {{/model}}
 @end
 {{/models}}
