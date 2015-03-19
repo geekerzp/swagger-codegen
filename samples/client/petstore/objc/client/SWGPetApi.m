@@ -110,28 +110,6 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
 
     
     
-            // primitive response type
-    
-    
-    // no return base type
-    return [client stringWithCompletionBlock: requestUrl 
-                                      method: @"PUT" 
-                                 queryParams: queryParams 
-                                        body: bodyDictionary 
-                                headerParams: headerParams
-                          requestContentType: requestContentType
-                         responseContentType: responseContentType
-                             completionBlock: ^(NSString *data, NSError *error) {
-                if (error) {
-                    completionBlock(error);
-                    return;
-                }
-                completionBlock(nil);
-                    }];
-    
-    
-    
-    
 }
 
 -(NSNumber*) addPetWithCompletionBlock: (SWGPet*) body
@@ -193,33 +171,11 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
 
     
     
-            // primitive response type
-    
-    
-    // no return base type
-    return [client stringWithCompletionBlock: requestUrl 
-                                      method: @"POST" 
-                                 queryParams: queryParams 
-                                        body: bodyDictionary 
-                                headerParams: headerParams
-                          requestContentType: requestContentType
-                         responseContentType: responseContentType
-                             completionBlock: ^(NSString *data, NSError *error) {
-                if (error) {
-                    completionBlock(error);
-                    return;
-                }
-                completionBlock(nil);
-                    }];
-    
-    
-    
-    
 }
 
--(NSNumber*) findPetsByStatusWithCompletionBlock: (NSArray*) status
+-(NSNumber*) findPetsByStatusWithCompletionBlock: (NSArray) status
         
-        completionHandler: (void (^)(NSArray* output, NSError* error))completionBlock
+        completionHandler: (void (^)(NSArray output, NSError* error))completionBlock
          {
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/pet/findByStatus", basePath];
@@ -245,7 +201,7 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
     
     bodyDictionary = [[NSMutableArray alloc] init];
 
-    NSMutableDictionary * formParams = [[NSMutableDictionary alloc]init]; 
+    NSMutableDictionary * formParams = [[NSMutableDictionary alloc]init];
 
     
     [bodyDictionary addObject:formParams];
@@ -274,9 +230,9 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
     
 }
 
--(NSNumber*) findPetsByTagsWithCompletionBlock: (NSArray*) tags
+-(NSNumber*) findPetsByTagsWithCompletionBlock: (NSArray) tags
         
-        completionHandler: (void (^)(NSArray* output, NSError* error))completionBlock
+        completionHandler: (void (^)(NSArray output, NSError* error))completionBlock
          {
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/pet/findByTags", basePath];
@@ -302,7 +258,7 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
     
     bodyDictionary = [[NSMutableArray alloc] init];
 
-    NSMutableDictionary * formParams = [[NSMutableDictionary alloc]init]; 
+    NSMutableDictionary * formParams = [[NSMutableDictionary alloc]init];
 
     
     [bodyDictionary addObject:formParams];
@@ -331,9 +287,9 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
     
 }
 
--(NSNumber*) getPetByIdWithCompletionBlock: (NSNumber*) petId
+-(NSNumber*) getPetByIdWithCompletionBlock: (NSNumber) petId
         
-        completionHandler: (void (^)(SWGPet* output, NSError* error))completionBlock
+        completionHandler: (void (^)(SWGPet output, NSError* error))completionBlock
          {
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/pet/{petId}", basePath];
@@ -358,7 +314,7 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
     
     bodyDictionary = [[NSMutableArray alloc] init];
 
-    NSMutableDictionary * formParams = [[NSMutableDictionary alloc]init]; 
+    NSMutableDictionary * formParams = [[NSMutableDictionary alloc]init];
 
     
     [bodyDictionary addObject:formParams];
@@ -398,9 +354,9 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
     
 }
 
--(NSNumber*) updatePetWithFormWithCompletionBlock: (NSString*) petId
-         name: (NSString*) name
-         status: (NSString*) status
+-(NSNumber*) updatePetWithFormWithCompletionBlock: (NSString) petId
+         name: (NSString) name
+         status: (NSString) status
         
         
         completionHandler: (void (^)(NSError* error))completionBlock {
@@ -427,7 +383,7 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
     
     bodyDictionary = [[NSMutableArray alloc] init];
 
-    NSMutableDictionary * formParams = [[NSMutableDictionary alloc]init]; 
+    NSMutableDictionary * formParams = [[NSMutableDictionary alloc]init];
 
     
     formParams[@"name"] = name;
@@ -443,32 +399,10 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
 
     
     
-            // primitive response type
-    
-    
-    // no return base type
-    return [client stringWithCompletionBlock: requestUrl 
-                                      method: @"POST" 
-                                 queryParams: queryParams 
-                                        body: bodyDictionary 
-                                headerParams: headerParams
-                          requestContentType: requestContentType
-                         responseContentType: responseContentType
-                             completionBlock: ^(NSString *data, NSError *error) {
-                if (error) {
-                    completionBlock(error);
-                    return;
-                }
-                completionBlock(nil);
-                    }];
-    
-    
-    
-    
 }
 
--(NSNumber*) deletePetWithCompletionBlock: (NSString*) api_key
-         petId: (NSNumber*) petId
+-(NSNumber*) deletePetWithCompletionBlock: (NSString) api_key
+         petId: (NSNumber) petId
         
         
         completionHandler: (void (^)(NSError* error))completionBlock {
@@ -497,7 +431,7 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
     
     bodyDictionary = [[NSMutableArray alloc] init];
 
-    NSMutableDictionary * formParams = [[NSMutableDictionary alloc]init]; 
+    NSMutableDictionary * formParams = [[NSMutableDictionary alloc]init];
 
     
     [bodyDictionary addObject:formParams];
@@ -509,33 +443,11 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
 
     
     
-            // primitive response type
-    
-    
-    // no return base type
-    return [client stringWithCompletionBlock: requestUrl 
-                                      method: @"DELETE" 
-                                 queryParams: queryParams 
-                                        body: bodyDictionary 
-                                headerParams: headerParams
-                          requestContentType: requestContentType
-                         responseContentType: responseContentType
-                             completionBlock: ^(NSString *data, NSError *error) {
-                if (error) {
-                    completionBlock(error);
-                    return;
-                }
-                completionBlock(nil);
-                    }];
-    
-    
-    
-    
 }
 
--(NSNumber*) uploadFileWithCompletionBlock: (NSNumber*) petId
-         additionalMetadata: (NSString*) additionalMetadata
-         file: (SWGFile*) file
+-(NSNumber*) uploadFileWithCompletionBlock: (NSNumber) petId
+         additionalMetadata: (NSString) additionalMetadata
+         file: (SWGFile) file
         
         
         completionHandler: (void (^)(NSError* error))completionBlock {
@@ -562,7 +474,7 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
     
     bodyDictionary = [[NSMutableArray alloc] init];
 
-    NSMutableDictionary * formParams = [[NSMutableDictionary alloc]init]; 
+    NSMutableDictionary * formParams = [[NSMutableDictionary alloc]init];
 
     
     formParams[@"additionalMetadata"] = additionalMetadata;

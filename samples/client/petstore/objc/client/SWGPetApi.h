@@ -60,11 +60,11 @@
  @param status Status values that need to be considered for filter
  
 
- return type: NSArray*
+ return type: NSArray
  */
--(NSNumber*) findPetsByStatusWithCompletionBlock :(NSArray*) status 
+-(NSNumber*) findPetsByStatusWithCompletionBlock :(NSArray) status 
     
-    completionHandler: (void (^)(NSArray* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(NSArray output, NSError* error))completionBlock;
     
 
 
@@ -79,11 +79,11 @@
  @param tags Tags to filter by
  
 
- return type: NSArray*
+ return type: NSArray
  */
--(NSNumber*) findPetsByTagsWithCompletionBlock :(NSArray*) tags 
+-(NSNumber*) findPetsByTagsWithCompletionBlock :(NSArray) tags 
     
-    completionHandler: (void (^)(NSArray* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(NSArray output, NSError* error))completionBlock;
     
 
 
@@ -98,11 +98,11 @@
  @param petId ID of pet that needs to be fetched
  
 
- return type: SWGPet*
+ return type: SWGPet
  */
--(NSNumber*) getPetByIdWithCompletionBlock :(NSNumber*) petId 
+-(NSNumber*) getPetByIdWithCompletionBlock :(NSNumber) petId 
     
-    completionHandler: (void (^)(SWGPet* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SWGPet output, NSError* error))completionBlock;
     
 
 
@@ -123,9 +123,9 @@
 
  return type: 
  */
--(NSNumber*) updatePetWithFormWithCompletionBlock :(NSString*) petId 
-     name:(NSString*) name 
-     status:(NSString*) status 
+-(NSNumber*) updatePetWithFormWithCompletionBlock :(NSString) petId 
+     name:(NSString) name 
+     status:(NSString) status 
     
     
     completionHandler: (void (^)(NSError* error))completionBlock;
@@ -146,8 +146,8 @@
 
  return type: 
  */
--(NSNumber*) deletePetWithCompletionBlock :(NSString*) api_key 
-     petId:(NSNumber*) petId 
+-(NSNumber*) deletePetWithCompletionBlock :(NSString) api_key 
+     petId:(NSNumber) petId 
     
     
     completionHandler: (void (^)(NSError* error))completionBlock;
@@ -170,9 +170,9 @@
 
  return type: 
  */
--(NSNumber*) uploadFileWithCompletionBlock :(NSNumber*) petId 
-     additionalMetadata:(NSString*) additionalMetadata 
-     file:(SWGFile*) file 
+-(NSNumber*) uploadFileWithCompletionBlock :(NSNumber) petId 
+     additionalMetadata:(NSString) additionalMetadata 
+     file:(SWGFile) file 
     
     
     completionHandler: (void (^)(NSError* error))completionBlock;

@@ -19,10 +19,10 @@
 
  
 
- return type: NSDictionary*
+ return type: NSDictionary
  */
 -(NSNumber*) getInventoryWithCompletionBlock :
-    (void (^)(NSDictionary* output, NSError* error))completionBlock;
+    (void (^)(NSDictionary output, NSError* error))completionBlock;
     
 
 
@@ -37,11 +37,11 @@
  @param body order placed for purchasing the pet
  
 
- return type: SWGOrder*
+ return type: SWGOrder
  */
 -(NSNumber*) placeOrderWithCompletionBlock :(SWGOrder*) body 
     
-    completionHandler: (void (^)(SWGOrder* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SWGOrder output, NSError* error))completionBlock;
     
 
 
@@ -56,11 +56,11 @@
  @param orderId ID of pet that needs to be fetched
  
 
- return type: SWGOrder*
+ return type: SWGOrder
  */
--(NSNumber*) getOrderByIdWithCompletionBlock :(NSString*) orderId 
+-(NSNumber*) getOrderByIdWithCompletionBlock :(NSString) orderId 
     
-    completionHandler: (void (^)(SWGOrder* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SWGOrder output, NSError* error))completionBlock;
     
 
 
@@ -77,7 +77,7 @@
 
  return type: 
  */
--(NSNumber*) deleteOrderWithCompletionBlock :(NSString*) orderId 
+-(NSNumber*) deleteOrderWithCompletionBlock :(NSString) orderId 
     
     
     completionHandler: (void (^)(NSError* error))completionBlock;

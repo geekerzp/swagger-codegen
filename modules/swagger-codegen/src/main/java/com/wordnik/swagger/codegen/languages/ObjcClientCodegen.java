@@ -15,7 +15,7 @@ public class ObjcClientCodegen extends DefaultCodegen implements CodegenConfig {
   public CodegenType getTag() {
     return CodegenType.CLIENT;
   }
-  
+
   public String getName() {
     return "objc";
   }
@@ -41,7 +41,7 @@ public class ObjcClientCodegen extends DefaultCodegen implements CodegenConfig {
         "bool",
         "int",
         "NSString",
-        "NSObject", 
+        "NSObject",
         "NSArray",
         "NSNumber",
         "NSDictionary",
@@ -148,10 +148,12 @@ public class ObjcClientCodegen extends DefaultCodegen implements CodegenConfig {
   @Override
   public String getTypeDeclaration(Property p) {
     String swaggerType = getSwaggerType(p);
-    if(languageSpecificPrimitives.contains(swaggerType) && !foundationClasses.contains(swaggerType))
+    if(languageSpecificPrimitives.contains(swaggerType) && !foundationClasses.contains(swaggerType)) {
       return toModelName(swaggerType);
-    else
-      return swaggerType + "*";
+    }
+    else {
+      return swaggerType;
+    }
   }
 
   @Override

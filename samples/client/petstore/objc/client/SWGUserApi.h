@@ -42,7 +42,7 @@
 
  return type: 
  */
--(NSNumber*) createUsersWithArrayInputWithCompletionBlock :(NSArray*) body 
+-(NSNumber*) createUsersWithArrayInputWithCompletionBlock :(NSArray) body 
     
     
     completionHandler: (void (^)(NSError* error))completionBlock;
@@ -61,7 +61,7 @@
 
  return type: 
  */
--(NSNumber*) createUsersWithListInputWithCompletionBlock :(NSArray*) body 
+-(NSNumber*) createUsersWithListInputWithCompletionBlock :(NSArray) body 
     
     
     completionHandler: (void (^)(NSError* error))completionBlock;
@@ -80,12 +80,12 @@
  @param password The password for login in clear text
  
 
- return type: NSString*
+ return type: NSString
  */
--(NSNumber*) loginUserWithCompletionBlock :(NSString*) username 
-     password:(NSString*) password 
+-(NSNumber*) loginUserWithCompletionBlock :(NSString) username 
+     password:(NSString) password 
     
-    completionHandler: (void (^)(NSString* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(NSString output, NSError* error))completionBlock;
     
 
 
@@ -116,11 +116,11 @@
  @param username The name that needs to be fetched. Use user1 for testing. 
  
 
- return type: SWGUser*
+ return type: SWGUser
  */
--(NSNumber*) getUserByNameWithCompletionBlock :(NSString*) username 
+-(NSNumber*) getUserByNameWithCompletionBlock :(NSString) username 
     
-    completionHandler: (void (^)(SWGUser* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SWGUser output, NSError* error))completionBlock;
     
 
 
@@ -139,7 +139,7 @@
 
  return type: 
  */
--(NSNumber*) updateUserWithCompletionBlock :(NSString*) username 
+-(NSNumber*) updateUserWithCompletionBlock :(NSString) username 
      body:(SWGUser*) body 
     
     
@@ -159,7 +159,7 @@
 
  return type: 
  */
--(NSNumber*) deleteUserWithCompletionBlock :(NSString*) username 
+-(NSNumber*) deleteUserWithCompletionBlock :(NSString) username 
     
     
     completionHandler: (void (^)(NSError* error))completionBlock;

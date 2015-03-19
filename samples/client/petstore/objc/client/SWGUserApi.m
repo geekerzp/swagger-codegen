@@ -133,7 +133,7 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
     
 }
 
--(NSNumber*) createUsersWithArrayInputWithCompletionBlock: (NSArray*) body
+-(NSNumber*) createUsersWithArrayInputWithCompletionBlock: (NSArray) body
         
         
         completionHandler: (void (^)(NSError* error))completionBlock {
@@ -216,7 +216,7 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
     
 }
 
--(NSNumber*) createUsersWithListInputWithCompletionBlock: (NSArray*) body
+-(NSNumber*) createUsersWithListInputWithCompletionBlock: (NSArray) body
         
         
         completionHandler: (void (^)(NSError* error))completionBlock {
@@ -299,10 +299,10 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
     
 }
 
--(NSNumber*) loginUserWithCompletionBlock: (NSString*) username
-         password: (NSString*) password
+-(NSNumber*) loginUserWithCompletionBlock: (NSString) username
+         password: (NSString) password
         
-        completionHandler: (void (^)(NSString* output, NSError* error))completionBlock
+        completionHandler: (void (^)(NSString output, NSError* error))completionBlock
          {
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/user/login", basePath];
@@ -330,7 +330,7 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
     
     bodyDictionary = [[NSMutableArray alloc] init];
 
-    NSMutableDictionary * formParams = [[NSMutableDictionary alloc]init]; 
+    NSMutableDictionary * formParams = [[NSMutableDictionary alloc]init];
 
     
     [bodyDictionary addObject:formParams];
@@ -390,7 +390,7 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
     
     bodyDictionary = [[NSMutableArray alloc] init];
 
-    NSMutableDictionary * formParams = [[NSMutableDictionary alloc]init]; 
+    NSMutableDictionary * formParams = [[NSMutableDictionary alloc]init];
 
     
     [bodyDictionary addObject:formParams];
@@ -426,9 +426,9 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
     
 }
 
--(NSNumber*) getUserByNameWithCompletionBlock: (NSString*) username
+-(NSNumber*) getUserByNameWithCompletionBlock: (NSString) username
         
-        completionHandler: (void (^)(SWGUser* output, NSError* error))completionBlock
+        completionHandler: (void (^)(SWGUser output, NSError* error))completionBlock
          {
 
     NSMutableString* requestUrl = [NSMutableString stringWithFormat:@"%@/user/{username}", basePath];
@@ -453,7 +453,7 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
     
     bodyDictionary = [[NSMutableArray alloc] init];
 
-    NSMutableDictionary * formParams = [[NSMutableDictionary alloc]init]; 
+    NSMutableDictionary * formParams = [[NSMutableDictionary alloc]init];
 
     
     [bodyDictionary addObject:formParams];
@@ -493,7 +493,7 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
     
 }
 
--(NSNumber*) updateUserWithCompletionBlock: (NSString*) username
+-(NSNumber*) updateUserWithCompletionBlock: (NSString) username
          body: (SWGUser*) body
         
         
@@ -554,31 +554,9 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
 
     
     
-            // primitive response type
-    
-    
-    // no return base type
-    return [client stringWithCompletionBlock: requestUrl 
-                                      method: @"PUT" 
-                                 queryParams: queryParams 
-                                        body: bodyDictionary 
-                                headerParams: headerParams
-                          requestContentType: requestContentType
-                         responseContentType: responseContentType
-                             completionBlock: ^(NSString *data, NSError *error) {
-                if (error) {
-                    completionBlock(error);
-                    return;
-                }
-                completionBlock(nil);
-                    }];
-    
-    
-    
-    
 }
 
--(NSNumber*) deleteUserWithCompletionBlock: (NSString*) username
+-(NSNumber*) deleteUserWithCompletionBlock: (NSString) username
         
         
         completionHandler: (void (^)(NSError* error))completionBlock {
@@ -605,7 +583,7 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
     
     bodyDictionary = [[NSMutableArray alloc] init];
 
-    NSMutableDictionary * formParams = [[NSMutableDictionary alloc]init]; 
+    NSMutableDictionary * formParams = [[NSMutableDictionary alloc]init];
 
     
     [bodyDictionary addObject:formParams];
@@ -615,28 +593,6 @@ static NSString * basePath = @"http://petstore.swagger.io/v2";
 
     SWGApiClient* client = [SWGApiClient sharedClientFromPool:basePath];
 
-    
-    
-            // primitive response type
-    
-    
-    // no return base type
-    return [client stringWithCompletionBlock: requestUrl 
-                                      method: @"DELETE" 
-                                 queryParams: queryParams 
-                                        body: bodyDictionary 
-                                headerParams: headerParams
-                          requestContentType: requestContentType
-                         responseContentType: responseContentType
-                             completionBlock: ^(NSString *data, NSError *error) {
-                if (error) {
-                    completionBlock(error);
-                    return;
-                }
-                completionBlock(nil);
-                    }];
-    
-    
     
     
 }

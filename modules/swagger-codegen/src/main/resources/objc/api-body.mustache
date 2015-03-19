@@ -112,7 +112,7 @@ static NSString * basePath = @"{{basePath}}";
     {{^bodyParam}}
     bodyDictionary = [[NSMutableArray alloc] init];
 
-    NSMutableDictionary * formParams = [[NSMutableDictionary alloc]init]; 
+    NSMutableDictionary * formParams = [[NSMutableDictionary alloc]init];
 
     {{#formParams}}{{#notFile}}
     formParams[@"{{paramName}}"] = {{paramName}};
